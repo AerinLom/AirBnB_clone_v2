@@ -4,8 +4,7 @@ from models.base_model import BaseModel, Base
 from models import specified_storage
 from sqlalchemy import Table, Column, String, Integer, Float, ForeignKey
 from sqlalchemy.orm import relationship
-from models.amenity import Amenity
-from models.review import Review
+import models
 
 if specified_storage == 'db':
     place_amenity = Table('place_amenity', Base.metadata,
@@ -53,6 +52,11 @@ class Place(BaseModel, Base):
         longitude = 0.0
         amenity_ids = []
 
+    def __init__(self, *args, **kwargs):
+        """initializes Place"""
+        super().__init__(*args, **kwargs)
+
+    if specified_storage != 'db':
         @property
         def reviews(self):
             """Getter attribute that returns the list of Review instances."""
