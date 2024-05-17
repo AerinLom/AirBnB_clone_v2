@@ -17,6 +17,7 @@ if specified_storage == 'db':
                                             ondelete='CASCADE'),
                                  primary_key=True))
 
+
 class Place(BaseModel, Base):
     """ A place to stay """
     __tablename__ = 'places'

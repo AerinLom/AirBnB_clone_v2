@@ -18,7 +18,9 @@ class State(BaseModel, Base):
     else:
         @property
         def cities(self):
-            """ Returns the list of City objects from storage linked to the current State """
+            """
+            Returns list of Cities from storage linked to the current State
+            """
             city_objs = []
             list_of_cities = models.storage.all(City)
             for city in list_of_cities.values():
