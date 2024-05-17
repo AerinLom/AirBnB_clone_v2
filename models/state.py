@@ -7,6 +7,7 @@ from models import specified_storage
 from models.city import City
 import models
 
+
 class State(BaseModel, Base):
     """ A class representing state data """
     __tablename__ = 'states'
