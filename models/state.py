@@ -5,12 +5,12 @@ from sqlalchemy.orm import relationship
 from models.base_model import BaseModel, Base
 from models import specified_storage
 from models.city import City
-
+import models
 
 class State(BaseModel, Base):
     """ A class representing state data """
-
     __tablename__ = 'states'
+
     if specified_storage == 'db':
         name = Column(String(128), nullable=False)
         cities = relationship("City", cascade="all, delete", backref="state")

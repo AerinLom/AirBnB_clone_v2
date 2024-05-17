@@ -20,9 +20,13 @@ class FileStorage:
             dict: A dictionary containing all objects or objects
                 of the specified class.
         """
-        if cls is None:
-            return FileStorage.__objects
-        return [obj for obj in self.__objects.values() if isinstance(obj, cls)]
+        if cls is not None:
+            object_dict = {}
+            for k, v in self.__objects.items():
+                if cls == v.__class__ or cls == v.__class__.__name__:
+                    object_dict[k] = v
+            return object_dict
+        return self.__objects
 
     def new(self, obj):
         """Adds new object to storage dictionary"""

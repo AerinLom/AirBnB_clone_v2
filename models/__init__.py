@@ -9,7 +9,7 @@ specified_storage = getenv('HBNB_TYPE_STORAGE')
 if specified_storage == 'db':
     from models.engine.db_storage import DBStorage
     storage = DBStorage()
-else:
+elif specified_storage == 'fs':
     from models.engine.file_storage import FileStorage
     storage = FileStorage()
 
