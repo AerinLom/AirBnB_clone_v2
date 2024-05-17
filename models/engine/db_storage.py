@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+Contains the class DBStorage
+"""
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from os import getenv
@@ -85,4 +90,4 @@ class DBStorage:
 
     def close(self):
         """Closes the working SQLAlchemy session"""
-        self.__session.close()
+        self.__session.remove()

@@ -16,6 +16,13 @@ class State(BaseModel, Base):
         cities = relationship("City", cascade="all, delete", backref="state")
 
     else:
+        name = ""
+
+    def __init__(self, *args, **kwargs):
+        """initializes state"""
+        super().__init__(*args, **kwargs)
+
+    if specified_storage != 'db':
         @property
         def cities(self):
             """
