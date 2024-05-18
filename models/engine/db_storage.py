@@ -6,7 +6,7 @@ Contains the class DBStorage
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from os import getenv
-from models.base_model import Base
+from models.base_model import BaseModel, Base
 from models.state import State
 from models.city import City
 from models.user import User
@@ -90,4 +90,4 @@ class DBStorage:
 
     def close(self):
         """Closes the working SQLAlchemy session"""
-        self.__session.remove()
+        self.__session.close()
