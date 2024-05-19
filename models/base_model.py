@@ -32,7 +32,7 @@ class BaseModel:
                 )
             else:
                 self.created_at = datetime.utcnow()
-            if kwargs.get("updated_at", None) and type(self.updated_at) is str:
+            if kwar.get("updated_at", None) and type(self.updated_at) is str:
                 self.updated_at = datetime.strptime(
                     kwargs["updated_at"], '%Y-%m-%d %H:%M:%S.%f'
                 )
