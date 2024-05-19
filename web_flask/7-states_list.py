@@ -14,9 +14,11 @@ app = Flask(__name__)
 @app.route("/states_list", strict_slashes=False)
 def states_list():
     """display a HTML page with the states listed in alphabetical order"""
-    states = sorted(list(storage.all(State).values()), key=lambda x: x.name)
-    return render_template("7-states_list.html", states=states)
-
+    states = storage.all(State)
+    list_of_states = []
+    for key, val in states.items():
+        list_of_states.append(val)
+    return render_template('7-states_list.html', states=list_of_states)
 
 @app.teardown_appcontext
 def teardown_db(exception):
