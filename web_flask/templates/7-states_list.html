@@ -1,14 +1,26 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <HTML lang="en">
+=======
+    <HTML lang="en">
+>>>>>>> fc02d0a53463d85459b8f92bbfb86c780b835daa
     <HEAD>
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
         <H1>States</H1>
+<<<<<<< HEAD
             <UL>
             {% for state in states|sort(attribute="name") %}
                 <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
             {% endfor %}
             </UL>
+=======
+        <UL>
+            {% for state in states %}
+            <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
+            {% endfor %}
+        </UL>
+>>>>>>> fc02d0a53463d85459b8f92bbfb86c780b835daa
     </BODY>
 </HTML>
